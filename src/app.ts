@@ -1,14 +1,13 @@
 import express, { Application } from 'express'
-import { routes } from './routes/'
+import { v1, routes } from './routes'
 
 // Boot express
 export const app: Application = express()
-export const v1: Application = express()
 
 app.use('/api/v1', v1);
 
 // Application routing
-routes(v1)
+routes()
 
 const port = 4000
 // Start server
